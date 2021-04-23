@@ -6,10 +6,12 @@ font-family: 'Inter', sans-serif;*/
   --secundary--blue: #1a9af7;
   --soft-blue:#E7F5FF;
   --warm-black: #201E1C;
+  --warm-black1:#282623;
   --black:#282623;
   --grey: #BABABA;
   --off-white: #FAF8F7;
   --white: #FFF;
+  --grey-dark:#808080;
 }
 *{
   box-sizing: border-box;
@@ -28,55 +30,454 @@ header{
   display: flex;
   flex-direction: column;
   align-items: center;
-  width: 100%;
-  min-width: 32rem; /*the width wont be smaller than 320px the minimum size of a phone*/
-  height: 33.4rem ;
+  inline-size: 100%;
+  min-inline-size: 32rem; /*the width wont be smaller than 320px the minimum size of a phone*/
+  block-size: 33.4rem ;
   text-align: center;
   background: linear-gradient(207deg, hsla(30, 7%, 12%, 1) 16%, hsla(33, 93%, 54%, 1) 100%);
  
 }
 .header__logoContainer{
-  width: 15rem;
-  height: 2.4rem;
+  inline-size: 15rem;
+  block-size: 2.4rem;
   align-self: center;
   margin-block-start: 4rem;
 }
 .header__title{
-  width: 90%;
-  min-width: 28.8rem;
-  max-width: 90rem;
+  inline-size: 90%;
+  min-inline-size: 28.8rem;
+  max-inline-size: 90rem;
   margin-block-start: 5rem;
   font-weight:700 ;
   font-size: 2.2rem;
-  color:white;
+  color: var(--white);
+  text-align: center;
   
 }
 .header__subtitle{
-  width: 90%;
-  min-width: 28.8rem;
-  max-width: 90rem;
+  inline-size: 90%;
+  min-inline-size: 28.8rem;
+  max-inline-size: 90rem;
   font-weight: 500;
   font-size: 1.4rem;
-  color:white;
+  line-height: 2.2rem;
+  color: var(--soft-orange);
 }
 .header__callToAction{
   margin-block-start: 2rem;
-  
   display: flex;
   align-items: center;
   justify-content: center;
-  inline-size: 70%;
+  inline-size: 22.9rem;
   block-size: 4.5rem;
   position: absolute;
-  bottom: -1.6rem;
+  /* bottom: -1.6rem; */
+  inset-block-end: -1.6rem;   /*new logical css to bottom*/
   box-shadow: 0px 0px 5px 2px #0000003d;
-  background-color: white;
-  border-radius: 0.2rem;
+  background-color: var(--off-white);
+  border:none;
+  border-radius: 0.25rem;
   
 }
 .header__callToAction a{
-    text-decoration: none;
+  text-decoration: none;
   font-weight: 700;
-  color:black;
-  font-size:1.5rem ;
+  color: var(--black);
+  font-size:1.4rem ;
+}
+.header__callToAction a span {
+  display:inline-block;
+  inline-size:1.3rem;
+  block-size: 0.8rem;
+  margin-inline-start: 1rem;
+  background-image: url('/assets/icons/Vector.svg');
+}
+/* ======================End of Header================== */
+/* ======================================================*/
+.font-black{
+  color:var(--black);
+}
+.currency__tables{
+  position: relative;
+  inline-size: 100%;
+  padding-block-end: 2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: var(--off-white);
+}
+.image-bitcoin{
+  block-size: 20rem;
+  inline-size: 20rem;
+  background-image: url('/assets/img/Bitcoin.svg');
+  background-position: center ;
+  background-size: cover;
+  background-repeat: no-repeat;
+  margin-block-start: 4rem;
+  margin-block-end: 5rem;
+}
+.tables__title{
+  
+  font-weight: 700;
+  color:var(--bitcoin-orange);
+  position:absolute;
+  inset-inline-start: 2rem;
+  inset-block-start: -2.5rem;
+  
+  
+
+}
+.table__traders {
+  position:relative;
+  
+  display:grid;
+  inline-size: 20rem;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows:  repeat(3, 1fr);
+  gap: 0.2rem;
+  text-align: center;
+  margin-block-end: 2rem;
+  border-radius: 15px;
+  box-shadow: 6px 7px 4px 2px #4a05051f;
+  margin-block-end: 3rem;
+}
+.left__sideTable {
+  padding-inline: 1rem;
+  padding-block: 1rem;
+  background-color: var(--white);
+  font-family: 'Inter', sans-serif;
+  font-weight: 500;
+  font-size: 1.6rem;
+  color:var(--grey);
+  
+}
+.left__sideTable:nth-of-type(1){
+  border-radius: 1rem 0 0 0 ;
+}
+.left__sideTable:nth-of-type(5){
+  border-radius: 0 0 0 1rem;
+  
+}
+.right__sideTable{
+  padding-inline: 1rem;
+  padding-block: 1rem;
+  background-color: var(--white);
+  font-family: 'Inter', sans-serif;
+  font-weight: 400;
+  font-size: 1.4rem;
+  color:var(--grey);
+}
+.right__sideTable:nth-of-type(2){
+  border-radius:  0 1rem 0 0 ;
+}
+.right__sideTable:nth-of-type(6){
+  border-radius: 0 0 1rem 0 ;
+  }
+  .trending-up{
+    display: inline-block;
+    margin-inline-start: 1.5rem;
+    inline-size: 1.1rem;
+    block-size: 0.8rem;
+    background-image: url('/assets/icons/trending-up.svg');
+    background-position: center;
+    background-size: cover;
+  }
+  .trending-down{
+    display: inline-block;
+    margin-inline-start: 1.5rem;
+    inline-size: 1.1rem;
+    block-size: 0.8rem;
+    background-image: url('/assets/icons/trending-down.svg');
+    background-position: center;
+    background-size: cover;
+  }
+.update__time{
+  inline-size: 15rem;
+  block-size: 2.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: rgb(226, 178, 88);
+  border-radius: 0.8rem;
+  font-size: 1.4rem;
+}
+.table__currency{
+  position:relative;
+  block-size: 11.8rem;
+  display:none;
+  inline-size: 20rem;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows:  repeat(3, 1fr);
+  gap: 0.2rem;
+  text-align: center;
+  margin-block-end: 2rem;
+  border-radius: 15px;
+  box-shadow: 6px 7px 4px 2px #4a05051f;
+}
+.flecha{
+  position: absolute;
+  inset-block-start: 43%;
+  inset-inline-start: -3rem;
+  inline-size: 0.742rem;
+  block-size: 1.2rem;
+  background-image: url('/assets/icons/arrowLeft.svg');
+}
+.flechaDerecha{
+  position: absolute;
+  inset-block-start: 43%;
+  inset-inline-end: -3rem;
+  inline-size: 0.742rem;
+  block-size: 1.2rem;
+  background-image: url('/assets/icons/arrowRight.svg');
+}
+.divisor-chip{
+  position: absolute;
+  inset-block-end: -1rem;
+  
+  z-index: 1;
+}
+/* ============================ benefits section==================
+=================================================================== */
+
+.benefits{
+  
+  position: relative;
+  background-color:var(--warm-black);
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  padding-block-end: 3rem;
+}
+.dark-grey{
+  color:var(--grey-dark)
+}
+.benefits__box{
+  position: relative;
+  max-inline-size: 29rem;
+  min-block-size: 15.2rem;
+  block-size: fit-content;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+  background-color: var(--warm-black1);
+  margin-block-end: 1rem;
+  margin-inline:1.5rem;
+  margin-block: 1rem;
+  box-shadow: 6px 7px 4px 2px #4a05051f;
+}
+.benefits__title{
+  inline-size: 90%;
+  min-inline-size: 28.8rem;
+  max-inline-size: 90rem;
+  font-weight:500 ;
+  font-size: 2rem;
+  color: var(--white);
+  text-align: center;
+  
+}
+.benefits__top{
+  inline-size: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-block-end: 2rem;
+}
+
+.boxes__division{
+  display: flex;
+  inline-size: 100%;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+}
+.text-center{
+  text-align: center;
+  inline-size: 100%;
+  
+}
+.image__bitcoin-girl-container{
+  inline-size: 100%;
+  text-align: center;
+  min-block-size: fit-content;
+  background-color: var(--off-white);
+}
+.image__bitcoin-girl{
+  inline-size: 100%;
+  min-block-size:100% ;
+  max-block-size: 100vh;
+  /* background-image: url('/assets/img/bitcoinbaby.jpg');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover; */
+}
+/* =====================================================================
+====================================================================
+========================end of img================================= */
+.plans_header{
+  display: flex;
+  flex-direction: column;
+}
+.plans{
+  inline-size: 100%;
+  min-block-size: 47rem;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  /* justify-content: center; */
+  background-color: var(--off-white);
+ 
+}
+.plans__price-title{
+  position: absolute;
+  inset-block-start: -1.2rem;
+  font-weight: 700;
+    font-size: 2.2rem;
+    color: var(--white);
+    text-align: center;
+  inline-size: 10rem;
+  block-size: 3rem;
+  background-color: var(--bitcoin-orange);
+  border-radius: 0.8rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.plans__subtitle{
+  font-weight: 500;
+  font-size: 1.6rem;
+  margin-block-end: 3rem;
+}
+.plans__subtitle-pricing{
+  font-weight: 500;
+  font-size: 1.2rem;
+  text-align: center;
+  inline-size: 80%;
+    font-size: 1.4rem;
+    line-height: 2.2rem;
+    color:var(--grey)
+}
+
+/* section container */
+.plans h3{
+  font-size: 2.5rem;
+  font-weight: 700;
+  
+  
+}
+/* box to contain title and price cards  */
+.plans__cardContainer{
+  position:relative;
+  display: flex;
+  inline-size: 19rem;
+  block-size: 24.7rem;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
+  box-shadow: 6px 7px 4px 2px #4a05051f;
+  background-color: var(--white);
+  border-radius: 1rem ;
+  margin-inline-end: 3rem;
+  margin-block-end: 3rem;
+  /* justify-content: space-around; */
+  
+}
+/* contains all prices cards */
+.plans__cardsbox{
+  inline-size: 100%;
+  display: flex;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+  
+}
+/* this is the individual price card */
+.plans__card{
+  inline-size: 80%;
+  max-inline-size: 30rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-block-start: 3rem;
+}
+.priceNumber{
+  font-size: 5.2rem;
+  font-weight: 700;
+  font-family: 'Inter', sans-serif;
+}
+.price{
+  position: relative;
+}
+.pound{
+  position: absolute;
+  inset-inline-start: -10px;
+}
+.plans__button{
+  inline-size: 15rem;
+  block-size: 4.8rem;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  border: 2px solid var(--bitcoin-orange);
+  border-radius: 0.8rem;
+  font-size: 1.4rem;
+  font-weight: 700;
+
+}
+.plans__button span{
+  display: inline-block;
+  inline-size: 2.4rem;
+  block-size: 2.4rem;
+  background-image: url('/assets/icons/arrow-right.svg');
+  background-position: center;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+@media only screen and (min-width:644px){
+  .image__bitcoin-girl{
+    inline-size: 64.4rem;
+  }
+    .tables{
+    display:flex;
+    inline-size: 90%;
+    justify-content: space-evenly;
+  }
+  .table__currency{
+    display:grid;
+  }
+  .flechaDerecha{
+    display:none;
+  }
+  .flecha{
+    display:none;
+  }
+  
+}
+@media only screen and (max-width:900px) {
+  .card2, .card3 {
+    display: none;
+  } 
+  
+  
+
+   
+  
 }
