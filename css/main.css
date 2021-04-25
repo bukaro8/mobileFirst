@@ -325,8 +325,6 @@ header{
 
   display: flex;
   flex-direction: column;
-  align-items: center;
-  /* justify-content: center; */
   background-color: var(--off-white);
  
 }
@@ -367,9 +365,23 @@ header{
   
   
 }
-/* box to contain title and price cards  */
+/* this is the container to hold three cards. 
+overflow-x: scroll , ovescroll-behavior-x :contain, and scroll-snap-type: proximity are 
+used to generate and horizontal scroll with the property scroll-snap-aling in 
+every card */
+.plans__cardsbox{
+  display: flex;
+  gap: 5rem;
+  overflow-x: scroll;
+  overscroll-behavior-x: contain;
+  scroll-snap-type: x proximity;
+  align-items: center;
+  block-size: 30rem;
+}
+
 .plans__cardContainer{
   position:relative;
+  scroll-snap-align: center;
   display: flex;
   inline-size: 19rem;
   block-size: 24.7rem;
@@ -379,19 +391,14 @@ header{
   box-shadow: 6px 7px 4px 2px #4a05051f;
   background-color: var(--white);
   border-radius: 1rem ;
-  margin-inline-end: 3rem;
+  margin-inline-start: 5rem;
+  /* margin-inline-end: 20rem; */
   margin-block-end: 3rem;
   /* justify-content: space-around; */
   
 }
 /* contains all prices cards */
-.plans__cardsbox{
-  inline-size: 100%;
-  display: flex;
-  justify-content: space-evenly;
-  flex-wrap: wrap;
-  
-}
+
 /* this is the individual price card */
 .plans__card{
   inline-size: 80%;
@@ -469,7 +476,9 @@ header{
   .flecha{
     display:none;
   }
-  
+ .plans{
+   align-items: center;
+ } 
 }
 @media only screen and (max-width:900px) {
   .card2, .card3 {
